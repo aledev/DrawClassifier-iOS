@@ -17,21 +17,10 @@ struct DrawCanvasView: View {
         
         VStack {
             
-            Canvas { context, size in
-                
-                for line in lines {
-                    var path = Path()
-                    path.addLines(line.points)
-                    
-                    context.stroke(
-                        path,
-                        with: .color(line.color),
-                        lineWidth: line.lineWidth
-                    )
-                                        
-                }
-                
-            } //: Canvas
+            DrawImageView(
+                currentLine: currentLine,
+                lines: lines
+            )
             .gesture(
                 DragGesture(
                     minimumDistance: 0,

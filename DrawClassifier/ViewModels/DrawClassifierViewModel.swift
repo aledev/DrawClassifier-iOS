@@ -10,7 +10,7 @@ import SwiftUI
 
 @MainActor
 class DrawClassifierViewModel: ObservableObject {
-    // MARK: - Properties
+    // MARK: - Properties    
     @Published var classification: String = ""
     @Published var currentLine = Line()
     @Published var lines: [Line] = []
@@ -23,22 +23,28 @@ class DrawClassifierViewModel: ObservableObject {
     }
     
     // MARK: - Functions
-    func classifyImage() {
+    func classifyImage(_ displayScale: CGFloat, size: CGSize) {
         guard let drawClassifierService = drawClassifierService else {
             return
         }
         
         let renderer = ImageRenderer(
-            content: DrawCanvasView(
-                currentLine: .constant(currentLine),
-                lines: .constant(lines)
+            content: DrawImageView(
+                currentLine: self.currentLine,
+                lines: self.lines
             )
+            .frame(width: size.width, height: 500)
         )
+        renderer.scale = displayScale
         
         guard let uiImage = renderer.uiImage,
-              let resizedImage = uiImage.resizeTo(size: CGSize(width: 224, height: 224)) else {
+              let data = uiImage.pngData(),
+              let fullImage = UIImage(data: data),
+              let resizedImage = fullImage.resizeTo(size: CGSize(width: 224, height: 224)) else {
             return
         }
+                
+        UIImageWriteToSavedPhotosAlbum(fullImage, nil, nil, nil)
         
         guard let drawClassification = drawClassifierService.classifyDraw(resizedImage) else {
             return

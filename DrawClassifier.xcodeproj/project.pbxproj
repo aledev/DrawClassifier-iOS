@@ -17,6 +17,7 @@
 		CE6D20BB2975DE970005E285 /* DrawClassifierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D20BA2975DE970005E285 /* DrawClassifierService.swift */; };
 		CE6D20BE2975E5AB0005E285 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D20BD2975E5AB0005E285 /* UIImage+Extension.swift */; };
 		CE6D20C02975ED300005E285 /* DrawClassifierV1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE6D20BF2975ED300005E285 /* DrawClassifierV1.mlmodel */; };
+		CED58D5B297608CB005FB191 /* DrawImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED58D5A297608CB005FB191 /* DrawImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CE6D20BA2975DE970005E285 /* DrawClassifierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawClassifierService.swift; sourceTree = "<group>"; };
 		CE6D20BD2975E5AB0005E285 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		CE6D20BF2975ED300005E285 /* DrawClassifierV1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DrawClassifierV1.mlmodel; sourceTree = "<group>"; };
+		CED58D5A297608CB005FB191 /* DrawImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				CE6D20AE29759E470005E285 /* DrawCanvasView.swift */,
+				CED58D5A297608CB005FB191 /* DrawImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6D20A2297596A60005E285 /* ContentView.swift in Sources */,
+				CED58D5B297608CB005FB191 /* DrawImageView.swift in Sources */,
 				CE6D20B22975A0CF0005E285 /* Line.swift in Sources */,
 				CE6D20C02975ED300005E285 /* DrawClassifierV1.mlmodel in Sources */,
 				CE6D20A0297596A60005E285 /* DrawClassifierApp.swift in Sources */,
@@ -342,6 +346,7 @@
 				DEVELOPMENT_TEAM = 765KFNJ7PQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to the photo library to store some images.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -371,6 +376,7 @@
 				DEVELOPMENT_TEAM = 765KFNJ7PQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires access to the photo library to store some images.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
